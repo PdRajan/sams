@@ -33,7 +33,9 @@ def faculty_details(request, faculty_id:int):
         "faculty_education": faculty_experience,  # TBD
         "faculty_publications": faculty_pub, #TBD
     }
-    return render(request, "faculty/faculty_details.html", {"faculty_details": faculty_details})def faculty_list(request):
+    return render(request, "faculty/faculty_details.html", {"faculty_details": faculty_details})
+    
+def faculty_list(request):
     return render(request, 'home/faculty_list.html',)
 
 
