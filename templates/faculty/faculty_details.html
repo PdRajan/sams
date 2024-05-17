@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load fams_extras %}
+{% block title %}
+Faculty Details | Achievement Management System
+{% endblock %}
+
+{% block heading %}
+Details for {{ faculty_name }}
+{% endblock %}
+
+{%block content %}
+<h2> Personal Details </h2>
+<table style="border: black 1px solid;">
+{% for key, val in faculty_details %}
+    <tr> 
+        <td>
+            <b> {{ key }} </b>
+        </td>
+        <td>
+            {{ val }}
+        </td>
+    </tr>
+{% endfor %}
+</table>
+
+<h2> Experience </h2>
+
+{% if faculty_experience %}
+    {# Do something #}
+{% else %}
+    No experience data.
+{% endif %}
+
+<h2> Education </h2>
+
+{% if faculty_education %}
+    {# Do something #}
+{% else %}
+    No education data.
+{% endif %}
+
+<h2> Publication </h2>
+
+{% if faculty_publications %}
+    {# Do something #}
+{% else %}
+    No publication data.
+{% endif %}
+
+{% endblock %}

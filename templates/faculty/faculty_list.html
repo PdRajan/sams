@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load fams_extras %}
+{% block title %}
+Faculty List | Achievement Management System
+{% endblock %}
+
+{% block heading %}
+List of Registered Faculty
+{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <th>
+            Faculty Name
+        </th>
+        <th>
+            Designation
+        </th>
+        <th>
+            Department
+        </th>
+        <th>
+            Shift
+        </th>
+    </thead>
+    {% for faculty in faculty_result_set %}
+    <tbody>
+        <tr>
+            <td>
+                {{ faculty.user.first_name }} {{faculty.user.last_name }}
+            </td>
+            <td>
+                {{ faculty.designation }}
+            </td>
+            <td>
+                {{ faculty.department }}
+            </td>
+            <td>
+                {{ faculty.shift | shift }}
+            </td>
+            <td>
+                <a href="{% url 'fams:faculty details' faculty.id %}"> Details </a>
+                </td>
+        </tbody>
+    {% endfor %}
+</table>
+{% endblock %}
